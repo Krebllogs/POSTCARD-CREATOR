@@ -1,0 +1,25 @@
+﻿<!DOCTYPE html>
+<html ng-app="postcardApp">
+<head>
+    <meta charset="utf-8" />
+    <title>Postcard Creator WEB</title>
+</head>
+<body id="app" class="app">
+    <div class="main-container">
+        <div id="content" class="content-container">
+            <div id="routedContent" ng-view></div>
+        </div>
+    </div>
+
+    <!--Libraries-->
+    <script src="Scripts/jquery-3.4.1.min.js"></script>
+    <script src="Scripts/angular.min.js"></script>
+    <script src="Scripts/angular-route.js"></script>
+    <!-- AngularJS Application -->
+    <script src="app/app.js"></script>
+    <!--Load Controllers-->
+    <script src="app/controllers/postcardController.js"></script>
+    <!-- Load Directives -->
+    <script src="app/directives/begin.js"></script>
+</body>
+</html>
