@@ -1,0 +1,17 @@
+﻿<div id="nav-wrapper" ng-controller="headerController" class="ng-scope">
+    <div style="width:90%; min-width:320px; max-width:991px" id="page-wrapper">
+        <div class="row-fluid"><div id="userinfo"></div></div>
+        <div style="max-width:100%" class="gradient boarder" id="header">
+            <a title="Home" href="#/home">
+                <img id="primaryLogo" src="" alt="header title">
+            </a>
+            <ul class="nav-bar nav-bar-right">
+                <li class="ng-scope"><a title="FAQ" tabindex="0" ng-click="openFaqQuest()" class="ng-binding">Instructions</a></li>
+            </ul>
+        </div>
+    </div>
+    <div id="faqQuest" kendo-window="faqQuest" k-title="'INSTRUCTIONS'" k-actions="['Close']" k-modal="true" k-width="'90%'" k-max-width="900" k-visible="false" k-resizable="true" k-content="{ url: 'app/views/faq.html' }" data-role="window" class="k-window-content k-content" tabindex="0" role="dialog" aria-labelledby="faqQuest_and_title">
+    </div>
+</div>
+
+

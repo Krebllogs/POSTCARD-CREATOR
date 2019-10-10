@@ -1,18 +1,14 @@
-﻿//app.controller('postcardController', function ($scope)
-//{
-//    $scope.Message = "Hello To Postcard Creator WEB";
-//}
-//);
-
-(function () {
+﻿(function () {
     'use strict';
     app.controller('postcardController', [
         '$scope', '$location', function ($scope, $location) {
-
-            $scope.Message = "Hello To Postcard Creator WEB";
-
+            $scope.Message="some message to be things to say!"
             $scope.go = function () {
-                $location.path('/begin');
+                $location.path('/finish');
             };
+
+            //clear cookies
+            //persistenceService.clearCookieData();
+
         }]);
 }).call(this);

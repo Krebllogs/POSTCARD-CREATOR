@@ -1,0 +1,36 @@
+﻿<!--<section ng-include="'app/views/idle.html'" class="footer-container ng-scope" style="">-->
+<!--templates for idle popups-->
+    <section ng-controller="idleController"></section>
+    <script type="text/ng-template" id="warning-dialog.html">
+        <div id="idleWarning" role="dialog" aria-labelledby="sessionTimeOut" aria-describedby="timeLeft" tabindex="-1">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2 id="sessionTimeOut" class="modal-title">Idle</h2>
+                </div>
+                <div idle-countdown="countdown" ng-init="countdown=60" class="modal-body">
+                    <p id="timeLeft">
+                        time: {{countdown}}
+                        <span ng-pluralize count="countdown" when="{'one': 'second', 'other': 'seconds' }"></span>
+                        <span ng-bind-html="CLICK"></span>
+                    </p>
+                    <uib-progressbar max="60" value="countdown" role="progressbar" aria-hidden="true" aria-live="Off" aria-valuemin="0" aria-valuemax="60" animate="true" class="progress-striped active"></uib-progressbar>
+                </div>
+                <div class="modal-footer">
+                    <input ng-controller="idleController" type="button" id="btnIContinue" class="btn btn-primary btn-lg pull-right" value="CONTINUE" data-ng-click="start()" />
+                </div>
+            </div>
+        </div>
+    </script>
+    <script type="text/ng-template" id="timedout-dialog.html">
+        <div id="idleTime" role="dialog" aria-labelledby="sessionExp" aria-describedby="redirecting" tabindex="0">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2 id="sessionExp" class="modal-title">Idle</h2>
+                </div>
+                <div class="modal-body">
+                    <p id="redirecting">Redirecting</p>
+                </div>
+                <div class="modal-footer"></div>
+            </div>
+        </div>
+    </script>

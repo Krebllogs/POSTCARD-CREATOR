@@ -1,0 +1,71 @@
+﻿<div id="home">
+    <div>{{Message}}</div>
+</div>
+
+<div id="postcardApp">
+    <form name="postcardForm" ng-submit="submitForm(postcardForm.$valid)">
+        <div class="row">
+            <!--<div class="col-sm-10"></div>-->
+            <div class="col-sm-12 text-right">
+                <span if="requiredMsg" class="required" aria-describedby="requiredMsg">*</span><span class="text-nowrap ng-binding">Required fields</span>
+            </div>
+        </div>
+        <div class="one-column">
+            <!--<div ng-hide="!donezoe" class="animate-show">-->
+            <div style="min-width:0; max-width:100%" class="border">
+                <div class="row" ng-show="true">
+                    <div class="col-sm-12">
+                        <h2 id="postcardTitle" class="gradientb ng-binding" aria-describedby="postcardTitle">Enter Postcard Information</h2>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <!--FIRST NAME-->
+                    <div class="col-sm-5">
+                        <div id="fName" aria-describedby="fName" class="form-group has-feedback" ng-class="{'has-error':postcardForm.fname.$invalid &amp;&amp; !postcardForm.fname.$pristine, 'has-success':postcardForm.fname.$valid}">
+                            <label id="fName" for="fName" class="ng-binding">First Name <span class="required">*</span></label>
+                            <input id="fName" name="fname" type="text" ng-model="vm.fn" data-ng-pattern="/^[a-zA-Z\- ]*$/" required="" title="This is a required field" class="form-control ng-pristine ng-untouched ng-empty ng-invalid ng-invalid-required ng-valid-pattern ng-valid-maxlength" maxlength="30" placeholder="Legal First Name" aria-required="true" aria-describedby="noDigits" style="">
+                            <span ng-class="{'form-control-feedback glyphicon glyphicon-exclamation-sign':postcardForm.fname.$invalid &amp;&amp; !postcardForm.fname.$pristine, 'form-control-feedback glyphicon glyphicon-ok':postcardForm.fname.$valid}"></span>
+                            <div class="error-message" data-ng-show="postcardForm.fname.$invalid">
+                                <i data-ng-show="postcardForm.fname.$error.required">
+                                    <!--Required-->
+                                </i>
+                                <i id="noDigits" data-ng-show="postcardForm.fname.$error.pattern" aria-describedby="noDigits" class="ng-binding ng-hide" style="">
+                                    No digits or special characters
+                                </i>
+                            </div>
+                        </div>
+                    </div>
+                    <!--LAST NAME-->
+                    <div class="col-sm-5">
+                        <div id="lName" aria-describedby="lName" class="form-group has-feedback" ng-class="{'has-error':postcardForm.lname.$invalid &amp;&amp; !postcardForm.lname.$pristine, 'has-success':postcardForm.lname.$valid}">
+                            <label id="lName" for="lName" class="ng-binding">Last Name <span class="required">*</span></label>
+                            <input id="lName" name="lname" type="text" ng-model="vm.ln" data-ng-pattern="/^[a-zA-Z\- ]*$/" required="" title="This is a required field" class="form-control ng-pristine ng-untouched ng-empty ng-invalid ng-invalid-required ng-valid-pattern ng-valid-maxlength" maxlength="30" placeholder="Legal Last Name" aria-required="true" aria-describedby="noDigits" style="">
+                            <span ng-class="{'form-control-feedback glyphicon glyphicon-exclamation-sign':postcardForm.lname.$invalid &amp;&amp; !postcardForm.lname.$pristine, 'form-control-feedback glyphicon glyphicon-ok':postcardForm.lname.$valid}"></span>
+                            <div class="error-message" data-ng-show="postcardForm.lname.$invalid">
+                                <i data-ng-show="postcardForm.lname.$error.required">
+                                    <!--Required-->
+                                </i>
+                                <i id="noDigits" data-ng-show="postcardForm.lname.$error.pattern" aria-describedby="noDigits" class="ng-binding ng-hide" style="">
+                                    No digits or special characters
+                                </i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row flex-nowrap">
+                    <div class="col-sm-3">
+                        <div class="form-group">
+                            <button class="btn btn-secondary shadow-none float-left" type="button" back="">Back</button>
+                        </div>
+                    </div>
+                    <div class="col-sm-9">
+                        <div class="form-group" id="btnContinue" aria-describedby="btnContinue">
+                            <input type="submit" id="btnContinue" class="btn btn-primary btn-large float-right" value="Continue" ng-disabled="postcardForm.$invalid || noMoreClicks" ng-click="noMoreClicks=!noMoreClicks;" disabled="disabled">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
