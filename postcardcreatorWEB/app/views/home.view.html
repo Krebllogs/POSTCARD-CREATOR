@@ -1,21 +1,42 @@
 ﻿<div id="home">
-    <form>
+    <form name="homeForm" ng-submit="submitForm(homeForm.$valid)">
+        <div class="row">
+            <div class="col-sm-12 text-right">
+                <span if="requiredMsg" class="required" aria-describedby="requiredMsg">*</span><span class="text-nowrap ng-binding">Required fields</span>
+            </div>
+        </div>
         <div class="one-column">
-            <div class="border">
-                <div class="row">
+            <div style="min-width:0; max-width:100%" class="border">
+                <div class="row" ng-show="true">
                     <div class="col-sm-12">
-                        <h2 class="gradientb" id="homeTitle">
+                        <h2 id="homeTitle" class="gradientb" aria-describedby="homeTitle">
                             Postcard Creator
                         </h2>
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-sm-12"><p>Welcome to Postcard Creator App!</p></div>
+                    <div class="col-sm-12">
+                        <p>Welcome to Postcard Creator App!</p>
+                    </div>
                 </div>
                 <div class="row">
-                    <div class="col-sm-5 pull-right">
+                    <div>
+                        <div class="col-sm-12">
+                            <div class="form-check">
+                                <input type="checkbox" class="checkbox-inline" title="This is a required field" id="agreed" required="required" ng-model="agreed">
+                                <label class="checkbox-label" id="agreed" for="agreed">
+                                    By checking this box, you agree to something you may or may not know about.
+                                </label>
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+                <div class="row text-nowrap">
+                    <div class="col-sm-3">
+                    </div>
+                    <div class="col-sm-9">
                         <div class="form-group" id="btnContinue" aria-describedby="btnContinue">
-                            <input disabled="disabled" class="btn btn-primary btn-large float-right" id="btnContinue" type="submit" value="Continue" ng-disabled="homeForm.$invalid" ng-click="go()">
+                            <input type="submit" id="btnContinue" class="btn btn-primary btn-large pull-right" value="Continue" ng-disabled="homeForm.$invalid" disabled="disabled" ng-click="go()">
                         </div>
                     </div>
                 </div>

@@ -73,7 +73,7 @@
             };
         }])
         .config(function (IdleProvider, KeepaliveProvider) {
-            IdleProvider.idle(5);//25 minutes=1500 29 minutes=1740 59 minutes=3540
+            IdleProvider.idle(300);//25 minutes=1500 29 minutes=1740 59 minutes=3540
             IdleProvider.timeout(60);//5 minutes = 300
             KeepaliveProvider.interval(10);
             IdleProvider.autoResume('notIdle')

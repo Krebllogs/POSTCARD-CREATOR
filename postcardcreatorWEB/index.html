@@ -4,26 +4,27 @@
     <meta charset="utf-8" />
     <title>Postcard Creator WEB</title>
     <!-- Fonts & Styles -->
-    <link href="Content/bootstrap.css" rel="stylesheet" />
     <link href="Content/ui-bootstrap-csp.css" rel="stylesheet" />
     <link href="Content/kendo/2019.3.917/kendo.common.min.css" rel="stylesheet" />
     <link href="Content/kendo/2019.3.917/kendo.silver.min.css" rel="stylesheet" />
+    <link href="Content/bootstrap.css" rel="stylesheet" />
     <link href="Content/styles.css" rel="stylesheet" />
 </head>
 <body id="app" class="app">
-    <div id="page-wrapper">
+    <div id="page-wrapper" class="container">
         <div id="fixedContent">
-            <section ng-include="'app/views/header.html'" class="header-container"></section>
+            <section ng-include="'app/views/header.html'"></section>
         </div>
         <div id="column-wrapper">
             <div id="main-container">
-                <div id="content" class="content-container">
+                <div id="content" class="container">
                     <section ng-view></section>
                 </div>
             </div>
         </div>
-        <div id="fixedContent">
-            <section ng-include="'app/views/idle.html'" class="footer-container"></section>
+        <div id="footer-content">
+            <section ng-Include="'app/views/footer.html'"></section>
+            <section ng-include="'app/views/idle.html'"></section>
         </div>
     </div>
         <!--Libraries-->
@@ -33,7 +34,7 @@
         <script src="Scripts/angular-animate.js"></script>
         <script src="Scripts/angular-resource.js"></script>
         <script src="Scripts/angular-sanitize.js"></script>
-        <script src="Scripts/angular-ui/ui-bootstrap.js"></script>
+        <!--<script src="Scripts/angular-ui/ui-bootstrap.js"></script>-->
         <script src="Scripts/angular-ui/ui-bootstrap-tpls.js"></script>
         <script src="Scripts/angular-local-storage.js"></script>
         <script src="Scripts/angular-idle.js"></script>

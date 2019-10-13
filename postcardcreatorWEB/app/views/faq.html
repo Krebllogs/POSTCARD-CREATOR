@@ -1,92 +1,23 @@
-﻿        <!--<div class="container">-->
-
-
-<!--<div class="k-widget k-window" style="padding-top: 47px; min-width: 90px; min-height: 50px; max-width: 900px; width: 90%; display: block; top: 102px; left: 314.5px; z-index: 10003; opacity: 1; transform: scale(1);" data-role="draggable">
-    <div class="k-window-titlebar k-header" style="margin-top: -47px;">
-        <span class="k-window-title" id="faqQuest_and_title">INSTRUCTIONS</span>
-        <div class="k-window-actions">
-            <a role="button" href="#" class="k-window-action k-link"><span role="presentation" class="k-icon k-i-close">Close</span></a>
-        </div>
-    </div>-->
-
-    <!--</div>-->
-    <form style="width:100%; padding:0" class="ng-pristine ng-valid ng-scope">
+﻿<!-- FAQ Template -->
+    <form style="width:100%; padding:0">
         <div class="one-column">
-            <!--<br />-->
-            <div style="min-width:0px; max-width:100%">
-                <!--ACCORDION-->
-
-                <!--<uib-accordion id="AccorFaq" close-others="oneAtATime" class="ui-accordion">
-                    <div role="tablist" class="panel-group">
-                        <div class="panel ng-scope ng-isolate-scope panel-default" ng-class="panelClass || 'panel-default'" is-open="quest1" style="">
-                            <div role="tab" id="accordiongroup" class="panel-heading" ng-keypress="toggleOpen($event)">
-                                <h4 class="panel-title">
-                                    <a role="button" data-toggle="collapse" href="" aria-controls="accordiongroup" tabindex="0" class="accordion-toggle" ng-click="toggleOpen()" uib-accordion-transclude="heading">
-                                        <span uib-accordion-header="" ng-class="{'text-muted': isDisabled}" class="ng-binding">
-                                            <i class="pull-left faq glyphicon ng-scope glyphicon-plus-sign" ng-class="{'glyphicon-minus-sign': quest1, 'glyphicon-plus-sign': !quest1}"> </i><span class="ng-binding ng-scope">
-                                                Make postcards for a person, but badly...
-                                            </span>
-                                        </span>
-                                    </a>
-                                </h4>
-                            </div>
-                            <div id="accordiongroup" aria-labelledby="accordiongroup" aria-hidden="true" role="tabpanel" class="panel-collapse collapse" uib-collapse="!isOpen" style="height: 0px;" aria-expanded="false">
-                                <div style="padding-left:0px;padding-right:0px" class="panel-body">
-                                    <uib-accordion-heading class="ng-scope"></uib-accordion-heading>
-                                    <p class="faqans ng-binding ng-scope" id="answer1" aria-describedby="answer1">click and do stuff untill the end.</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="faqdottedLineDivider ng-scope"></div>
-                        <div class="panel ng-scope ng-isolate-scope panel-default" ng-class="panelClass || 'panel-default'" is-open="quest2">
-                            <div role="tab" id="accordiongroup" class="panel-heading" ng-keypress="toggleOpen($event)">
-                                <h4 class="panel-title">
-                                    <a role="button" data-toggle="collapse" href="" aria-controls="accordiongroup" tabindex="0" class="accordion-toggle" ng-click="toggleOpen()" uib-accordion-transclude="heading">
-                                        <span uib-accordion-header="" ng-class="{'text-muted': isDisabled}" class="ng-binding">
-                                            <i class="pull-left faq glyphicon ng-scope glyphicon-plus-sign" ng-class="{'glyphicon-minus-sign': quest2, 'glyphicon-plus-sign': !quest2}"> </i><span class="ng-binding ng-scope">
-                                                Can i click stuff?
-                                            </span>
-                                        </span>
-                                    </a>
-                                </h4>
-                            </div>
-                            <div id="accordiongroup" aria-labelledby="accordiongroup" aria-hidden="true" role="tabpanel" class="panel-collapse collapse" uib-collapse="!isOpen" style="height: 0px;" aria-expanded="false">
-                                <div style="padding-left:0px;padding-right:0px" class="panel-body">
-                                    <uib-accordion-heading class="ng-scope"></uib-accordion-heading>
-                                    <p class="faqans ng-binding ng-scope" id="answer2" aria-describedby="answer2">
-                                        Please click stuff.
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </uib-accordion>-->
+            <!--ACCORDION-->
+            <uib-accordion id="AccorFaq" close-others="oneAtATime" class="ui-accordion">
+                <div uib-accordion-group class="panel-default" is-open="quest1" is-disabled="status.isFirstDisabled">
+                    <uib-accordion-heading class="panel-heading">
+                        I can have markup, too! <i class="pull-right glyphicon" ng-class="{'glyphicon-minus-sign': quest1, 'glyphicon-plus-sign': !quest1}"></i>
+                    </uib-accordion-heading>
+                    <p class="faqans">This is just some content to illustrate fancy headings.</p>
+                </div>
+                <div uib-accordion-group class="panel-default" is-open="quest2">
+                    <uib-accordion-heading class="panel-heading">
+                        I can have markup, too! <i class="pull-right glyphicon" ng-class="{'glyphicon-minus-sign': quest2, 'glyphicon-plus-sign': !quest2}"></i>
+                    </uib-accordion-heading>
+                    <p class="faqans">This is just some content to illustrate fancy headings.</p>
+                </div>
+            </uib-accordion>
             </div>
             <p class="faqans ng-scope" ng-controller="headerController" id="Close" aria-describedby="Close">
                 <a title="Close" tabindex="0" class="k-link ng-binding" data-ng-click="closeFaqQuest()">Close</a>
             </p>
-        </div>
     </form>
-<!--</div>-->
-<!--</div>-->
-<!--</div>-->
-<!--<ol class="faq">
-    <li>
-        <h5>{{ 'FAQs.QUESTION1' | translate }}</h5>
-        <p class="faqans">
-            {{ 'FAQs.ANSWER1' | translate }}
-        </p>
-    </li>
-    <li>
-        <h5>
-            {{ 'FAQs.QUESTION2' | translate }}
-        </h5>
-        <p class="faqans">
-            {{ 'FAQs.ANSWER2' | translate }}
-            <br /><br />
-            Access from AT&T<br />
-            PO Box 5030<br />
-            Charleston, IL 61920-5030
-        </p>
-    </li>
-</ol>-->
