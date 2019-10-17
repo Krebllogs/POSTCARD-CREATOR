@@ -1,5 +1,5 @@
 ﻿var app = angular.module('postcardApp',
-    ['ngRoute', 'ngAnimate', 'ui.bootstrap', 'kendo.directives', 'ngIdle']);
+    ['ngRoute', 'ngAnimate', 'ui.bootstrap', 'kendo.directives', 'ngIdle', 'LocalStorageModule']);
 
 app.config(function ($routeProvider, $locationProvider) {
 

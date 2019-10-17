@@ -73,12 +73,13 @@ form {
 }
 
 h1 {
-    color: #EA7400 !important;
+    /*#EBCB8B*/
+    color: #000000 !important;
     text-decoration: none !important;
 }
 
 h2 {
-    color: #EA7400 !important;
+    color: #000000 !important;
     text-decoration: none !important;
 }
 
@@ -114,7 +115,7 @@ a, a:link {
     cursor: pointer;
     font-weight: normal;
     font-style: normal;
-    font-family: Omnes_att_ii_regular,Arial,Helvetica,sans-serif !important;
+    font-family: Arial,Helvetica,sans-serif !important;
     font-size: 19px !important;
     margin-top: -12px;
     margin-bottom: -40px;
@@ -305,8 +306,7 @@ h5 { /*color:#EA7400*/
 
 .navbar-inverse {
     /*background-color: #ff7200;
-    border-color: #ff7200;
-    background-image: url('../img/attorangegradiant banner.png');*/
+    border-color: #ff7200;*/
 }
 
     .navbar-inverse .navbar-link {
@@ -649,29 +649,29 @@ h5 { /*color:#EA7400*/
 }
 
 .k-i-close {
-    /*background-image: url('../img/close.png');*/
+    /*background-image: url('../content/close.png');*/
     background-position: 0 0;
     background-size: contain;
 }
 
 .k-cancel {
-    /*background-image: url('../img/close.png');*/
+    /*background-image: url('../content/close.png');*/
     background-position: 0 0;
     background-size: contain;
 }
 
 .k-i-cancel, .k-cancel, .k-denied {
-    /*background-image: url('../img/close.png');*/
+    /*background-image: url('../content/close.png');*/
     background-position: 0 0;
 }
 
 .k-link:not(.k-state-disabled):hover > .k-i-cancel, .k-link:not(.k-state-disabled):hover > .k-cancel, .k-link:not(.k-state-disabled):hover > .k-denied, .k-state-hover > .k-i-cancel, .k-state-hover > .k-cancel, .k-state-hover > .k-denied, .k-state-hover > * > .k-i-cancel, .k-state-hover > * > .k-cancel, .k-state-hover > * > .k-denied, .k-button:not(.k-state-disabled):hover .k-i-cancel, .k-button:not(.k-state-disabled):hover .k-cancel, .k-button:not(.k-state-disabled):hover .k-denied, .k-textbox:hover .k-i-cancel, .k-textbox:hover .k-cancel, .k-textbox:hover .k-denied, .k-button:active .k-i-cancel, .k-button:active .k-cancel, .k-button:active .k-denied {
-    /*background-image: url('../img/close.png');*/
+    /*background-image: url('../content/close.png');*/
     background-position: 0 0;
 }
 
 .k-link:not(.k-state-disabled):hover > .k-i-close {
-    /*background-image: url('../img/closeH.png');*/
+    /*background-image: url('../content/closeH.png');*/
     background-position: 0 0;
 }
 
@@ -684,10 +684,6 @@ h5 { /*color:#EA7400*/
 
 .is-active {
     cursor: pointer;
-}
-/*programs*/
-.programs {
-    line-height: 1.8em;
 }
 
 label.checkbox-label input[type=checkbox] {
@@ -719,54 +715,6 @@ label.checkbox-label input[type=checkbox] {
         opacity: 0;
         padding: 0 -50px;
     }*/
-/* For desktop: */
-.col-1 {
-    width: 8.33%;
-}
-
-.col-2 {
-    width: 16.66%;
-}
-
-.col-3 {
-    width: 25%;
-}
-
-.col-4 {
-    width: 33.33%;
-}
-
-.col-5 {
-    width: 41.66%;
-}
-
-.col-6 {
-    width: 50%;
-}
-
-.col-7 {
-    width: 58.33%;
-}
-
-.col-8 {
-    width: 66.66%;
-}
-
-.col-9 {
-    width: 75%;
-}
-
-.col-10 {
-    width: 83.33%;
-}
-
-.col-11 {
-    width: 91.66%;
-}
-
-.col-12 {
-    width: 100%;
-}
 
 .image-preview {
     position: relative;
@@ -804,9 +752,9 @@ label.checkbox-label input[type=checkbox] {
     display: block;
     font-weight: normal;
 }
-/*AT&T dotted line*/
+/* Dotted Line */
 .faqdottedLineDivider {
-    /* background-image: url("/shopcms/media/att/2011/shop/wireless/devices/list/div-dotted-listgrid_96px.jpg"); */
+    /* background-image: url(""); */
     border-bottom: 1px dotted #9f9f9f;
     /* height: 1px; */
     margin: 10px 95px 10px 20px;

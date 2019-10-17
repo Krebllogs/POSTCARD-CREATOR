@@ -76,6 +76,9 @@
     <Content Include="app\controllers\postcardController.js" />
     <Content Include="app\controllers\reviewController.js" />
     <Content Include="app\directives\back.js" />
+    <Content Include="app\readme.txt" />
+    <Content Include="app\services\documentService.js" />
+    <Content Include="app\services\persistenceService.js" />
     <Content Include="app\views\header.html" />
     <Content Include="app\views\home.view.html" />
     <Content Include="app\views\footer.html" />
@@ -3227,9 +3230,7 @@
     <Content Include="Scripts\kendo\2019.3.917\cultures\kendo.culture.aa-ER.min.js.map" />
     <Content Include="Scripts\kendo\2019.3.917\cultures\kendo.culture.aa-DJ.min.js.map" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="app\services\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <TypeScriptCompile Include="Scripts\index.d.ts" />
   </ItemGroup>

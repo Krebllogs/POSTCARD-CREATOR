@@ -1,24 +1,24 @@
-﻿<div id="old">
-    <div>{{Message}}</div>
-</div>
-<div id="postcardApplication">
+﻿<div id="postcardApplication">
     <form name="postcardForm" ng-submit="submitForm(postcardForm.$valid)">
         <div class="row">
             <!--<div class="col-sm-10"></div>-->
             <div class="col-sm-12 text-right">
-                <span if="requiredMsg" class="required" aria-describedby="requiredMsg">*</span><span class="text-nowrap ng-binding">Required fields</span>
+                <!--<span if="requiredMsg" class="required" aria-describedby="requiredMsg">*</span><span class="text-nowrap ng-binding">Required fields</span>-->
             </div>
         </div>
         <div class="one-column">
             <!--<div ng-hide="!donezoe" class="animate-show">-->
             <div style="min-width:0; max-width:100%" class="border">
-                <div class="row" ng-show="true">
+                <div class="row">
                     <div class="col-sm-12">
                         <h2 id="postcardTitle" class="gradientb" aria-describedby="postcardTitle">
                             Enter Postcard Information
                         </h2>
                     </div>
                 </div>
+                <p id="old">
+                    <div>{{Message}}</div>
+                </p>
                 <div class="row">
                     <!--FIRST NAME-->
                     <div class="col-sm-5">
@@ -53,6 +53,21 @@
                         </div>
                     </div>
                 </div>
+                <!--<div class="row">
+        <div class="col-sm-6">
+            <input name="files" id="files" type="file" aria-label="files" />
+            <p style="padding-top: 1em; text-align: right">
+                <button type="submit" class="k-button k-primary">Submit</button>
+            </p>
+        </div>
+    </div>-->
+                <div class="row">
+                    <div class="col-sm-6 pull-left">
+                        <div class="form-group">
+                            <input class="btn btn-primary btn-lg pull-left" id="btnUploadDoc" type="button" value="Upload" ng-click="openUploadDoc()">
+                        </div>
+                    </div>
+                </div>
                 <div class="row">
                     <div class="col-sm-10">
                         <div class="form-group">
@@ -76,4 +91,68 @@
             </div>
         </div>
     </form>
+
+
+
+
+    <div tabindex="0" class="ng-scope k-window-content k-content" id="updateDocs" role="dialog" aria-labelledby="updateDocs_and_title" k-visible="false" k-width="'90%'" k-modal="true" k-actions="['Close']" k-title="'Upload'" kendo-window="updateDocs" data-role="window">
+            <div class="rborder-narrow">
+                <div class="row">
+                    <div class="col-sm-11">
+                        <p tabindex="0" id="uploadtitle" aria-describedby="uploadtitle">Select a file to include in your postcard.</p>
+                        <div>
+                            <div>
+                                <ul tabindex="0" id="uploadinstructions" aria-describedby="uploadinstructions">
+                                    <li>
+                                        Pick a image file to attach to yoru post card:
+                                        <ul>
+                                            <li>It can be anything</li>
+                                            <li>Or is can be nothing</li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+                <div class="k-widget">
+                <div class="k-dropzone">
+                    <div class="k-button k-upload-button">
+                    <input name="files" title="Select File..." class="btn btn-primary btn-lg pull-right" 
+                           type="file" id="files"
+                           accept="application/pdf, image/gif, image/jpeg, image/png" 
+                           data-role="upload"
+                           k-options="postcardUploadOptions"
+                           autocomplete="off"
+                           k-error="uploadError"
+                           k-success="uploadSuccess"
+                           k-upload="uploadFiles" 
+                           k-select="selectFiles"
+                           kendo-upload>
+                        <span>Select File...</span>
+                        </div>
+                    <em>drop files here to upload</em>
+                    </div>
+                </div>
+
+            <br>
+            <span class="btn-spinner ng-hide" ng-show="uploadInProgress"><i class="fa fa-cog fa-1x fa-spin"></i>&nbsp;Generating Preview</span>
+
+            <div class="row">
+                <div class="col-sm-11">
+                    <div class="checkbox" ng-show="supportDocsUploaded">
+                        <div class="form-group" id="restartCheck" aria-describedby="restartConfirm">
+                            <label class="checkbox-label" for="restartConfirm">
+                                <input disabled="disabled" id="restartConfirm" aria-required="true" type="checkbox" ng-disabled="!supportDocsUploaded" ng-model="restart" ng-false-value="false" ng-true-value="true">
+                                Check this box to remove previously uploaded images and click the "Select File" button to upload new supporting documentation.
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        <p tabindex="0" class="faqans" id="Close" aria-describedby="Close"><a title="Close" class="k-link" ng-click="closeUploadDoc()">Close</a></p>
+    </div>
+
 </div>
