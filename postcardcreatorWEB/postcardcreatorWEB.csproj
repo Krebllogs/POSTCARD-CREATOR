@@ -74,7 +74,6 @@
     <Content Include="app\controllers\homeController.js" />
     <Content Include="app\controllers\idleController.js" />
     <Content Include="app\controllers\postcardController.js" />
-    <Content Include="app\controllers\reviewController.js" />
     <Content Include="app\directives\back.js" />
     <Content Include="app\readme.txt" />
     <Content Include="app\services\documentService.js" />
@@ -733,6 +732,8 @@
     <Content Include="index.html" />
     <Content Include="Scripts\angular-animate.js" />
     <Content Include="Scripts\angular-animate.min.js" />
+    <Content Include="Scripts\angular-cookies.js" />
+    <Content Include="Scripts\angular-cookies.min.js" />
     <Content Include="Scripts\angular-idle.js" />
     <Content Include="Scripts\angular-idle.min.js" />
     <Content Include="Scripts\angular-kendo.js" />
@@ -1241,6 +1242,7 @@
     <Content Include="Content\bootstrap.css.map" />
     <Content Include="Content\bootstrap-theme.min.css.map" />
     <Content Include="Content\bootstrap-theme.css.map" />
+    <Content Include="Scripts\angular-cookies.min.js.map" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <None Include="Scripts\jquery-3.4.1-vsdoc.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />

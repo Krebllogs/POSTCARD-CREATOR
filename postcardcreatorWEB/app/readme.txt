@@ -1,4 +1,45 @@
-﻿General Guidelines
+﻿External libraies and modules used:
+  Angular.UI.Bootstrap version="2.5.0"
+  purpose: Bootstrap components written in pure AngularJS
+  https://angular-ui.github.io/bootstrap/
+  AngularJS.Animate
+  version="1.7.8"
+  purpose: animation functionality
+  https://github.com/angular/bower-angular-animate
+  AngularJS.Core
+  version="1.7.8"
+  https://github.com/angular/angular.js/
+  AngularJS.Resource
+  version="1.7.8"
+  https://github.com/angular/bower-angular-resource
+  AngularJS.Route
+  version="1.7.8"
+  purpose: adds ngView for creating single page applications
+  https://github.com/angular/bower-angular-route
+  AngularJS.Sanitize
+  version="1.7.8"
+  https://github.com/angular/bower-angular-sanitize
+  angular-local-storage
+  version="0.7.0"
+  purpose: An AngularJS module that gives you access to the browsers local storage with cookie fallback
+  https://github.com/grevory/angular-local-storage
+  bootstrap
+  version="3.4.1"
+  purpose: styles
+  https://github.com/twbs
+  jQuery 
+  version="3.4.1"
+  https://github.com/jquery/jquery
+  KendoUICore 
+  version="2019.3.917"
+  purpose: Used for popups and templates
+  https://github.com/telerik/kendo-ui-core
+  Ng-Idle
+  purpose: An AngularJS module for detecting and responding to idle users
+  https://hackedbychinese.github.io/ng-idle/
+
+Assignment:
+General Guidelines
 
 Create a working proof of concept of the application which meets all of the minimum requirements. You
 can use many different programming languages to complete the assignment, but the majority of the
@@ -43,17 +84,3 @@ Bonus Points
  Capture multiple images and create a gif
  Geotag images
 ----------------------------------------------------------------------------------------------------------
-<packages>
-  <package id="Angular.UI.Bootstrap" version="2.5.0" targetFramework="net461" />
-  <package id="AngularJS.Animate" version="1.7.8" targetFramework="net461" />
-  <package id="AngularJS.Core" version="1.7.8" targetFramework="net461" />
-  <package id="AngularJS.KendoUI" version="1.0.3" targetFramework="net461" />
-  <package id="AngularJS.Resource" version="1.7.8" targetFramework="net461" />
-  <package id="AngularJS.Route" version="1.7.8" targetFramework="net461" />
-  <package id="AngularJS.Sanitize" version="1.7.8" targetFramework="net461" />
-  <package id="angular-local-storage" version="0.7.0" targetFramework="net461" />
-  <package id="bootstrap" version="3.4.1" targetFramework="net461" />
-  <package id="jQuery" version="3.4.1" targetFramework="net461" />
-  <package id="KendoUICore" version="2019.3.917" targetFramework="net461" />
-  <package id="popper.js" version="1.14.0" targetFramework="net461" />
-</packages>

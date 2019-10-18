@@ -1,4 +1,6 @@
-﻿'use strict';
+﻿//place holder serverce reference for a document service 
+//to save and delete stored files
+'use strict';
 app.factory('documentService', ['$http', function ($http) {
     var documentsServiceFactory = {
         getDocument: _getDocument,
@@ -24,5 +26,4 @@ app.factory('documentService', ['$http', function ($http) {
             return results;
         });
     }
-
 }]);

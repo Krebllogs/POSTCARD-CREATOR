@@ -1,13 +1,13 @@
 ﻿(function () {
     'use strict';
     app.controller('homeController', [
-        '$scope', '$location', function ($scope, $location) {
+        '$scope', '$location', 'persistenceService', function ($scope, $location, persistenceService) {
             $scope.go = function () {
                 $location.path('/postcard');
             };
 
             //clear cookies
-            //persistenceService.clearCookieData();
+            persistenceService.clearCookieData();
 
         }]);
 }).call(this);

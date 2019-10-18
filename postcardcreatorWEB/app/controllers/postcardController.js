@@ -1,7 +1,7 @@
 ﻿(function () {
     'use strict';
     app.controller('postcardController', [
-        '$scope', '$location', 'documentService', function ($scope, $location, documentService) {
+        '$scope', '$location', 'persistenceService', 'documentService', function ($scope, $location, persistenceService, documentService) {
             $scope.Message="some message to be things to say!"
 
             $scope.showStepItems = false;
@@ -192,9 +192,11 @@
                     "applicationID": $scope.vm.applicationID,
                 }
                 documentService.eraseFiles(eraseDetails).then((function (results) {
+                    //place holder should log through service
                     console.log("ok", results);
                 }),
                     function (response) {
+                        //place holder should log through service
                         console.log("err0r", results);
                     });
             }

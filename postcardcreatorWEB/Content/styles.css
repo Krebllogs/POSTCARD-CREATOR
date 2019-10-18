@@ -106,8 +106,8 @@ a, a:link {
     margin-right: 0px;
     margin-left: 0px;
 }
-/*#wrapper { padding: 50px 0; position:absolute; top:0; bottom:0; left:0; right:0;}
-#content { min-height:100%; width: 95%; }*/
+#wrapper { padding: 50px 0; position:absolute; top:0; bottom:0; left:0; right:0;}
+#content { min-height:100%; width: 95%; }
 #header .nav-bar li a, #header .nav-bar li a:link, #header .nav-bar li a:visited {
     color: #ffffff;
     background-color: transparent;
@@ -196,20 +196,6 @@ a, a:link {
     /*min-width: 850px;*/
 }
 
-.cborder {
-    border: solid 1px #e3e3e3;
-    padding: 15px 15px;
-    border-radius: 5px;
-    margin-bottom: 10px;
-    border-radius: 5px;
-    border: 1px solid #CCC;
-    /*box-shadow: 0 0px 10px rgba(153, 153, 153, .8);*/
-    max-width: 950px;
-    min-width: 850px;
-    text-align: left;
-    margin-left: 10px;
-}
-
 .rborder {
     border: solid 1px #e3e3e3;
     padding: 15px 15px;
@@ -249,15 +235,6 @@ a, a:link {
 h5 { /*color:#EA7400*/
     text-decoration: none !important;
     font-size: small;
-}
-
-.steps {
-    text-align: left;
-    margin-left: 15px;
-    margin-top: 12px;
-    padding-bottom: 30px;
-    width: 80%;
-    min-width: 840px;
 }
 
 .gradient {
@@ -339,7 +316,6 @@ h5 { /*color:#EA7400*/
     margin-left: auto;
 }
 
-
 .error-message {
     text-align: center;
     font-size: 10px;
@@ -353,18 +329,6 @@ h5 { /*color:#EA7400*/
     /*font-size: 12px;*/
     line-height: 14px;
     display: block;
-}
-
-.error-message-CASS {
-    text-align: left;
-    font-size: 12px;
-    color: #FF0000;
-}
-
-.error-message-CASS-apt {
-    max-height: 100px;
-    overflow-y: auto;
-    overflow-x: hidden;
 }
 
 .help-block {
@@ -692,13 +656,6 @@ label.checkbox-label input[type=checkbox] {
     vertical-align: text-bottom;
     bottom: 1px;
 }
-/*FOOTER need help*/
-.need-help {
-    color: #067ab4;
-    text-align: center;
-    padding-top: 24px;
-    /*display:inline-block;*/
-}
 /*ANIMATIONS*/
 /*.animate-show {
     opacity: 1;
@@ -746,7 +703,7 @@ label.checkbox-label input[type=checkbox] {
     font-size:24px;
 }
 
-.faqans{
+.faqans {
     padding-left:1.5em;
     padding-bottom: 1em;
     display: block;
