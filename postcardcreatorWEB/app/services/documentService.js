@@ -5,7 +5,7 @@ app.factory('documentService', ['$http', function ($http) {
     var documentsServiceFactory = {
         getDocument: _getDocument,
         eraseFiles: _eraseFiles,
-        awsSend: _Send
+        Send: _Send
     };
 
     return documentsServiceFactory;

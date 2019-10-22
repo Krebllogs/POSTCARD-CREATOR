@@ -5,20 +5,34 @@
             <uib-accordion id="AccorFaq" close-others="oneAtATime" class="ui-accordion">
                 <div uib-accordion-group class="panel-default" is-open="quest1" is-disabled="status.isFirstDisabled">
                     <uib-accordion-heading class="panel-heading">
-                        I can have markup, too! <i class="pull-right glyphicon" ng-class="{'glyphicon-minus-sign': quest1, 'glyphicon-plus-sign': !quest1}"></i>
+                        What is this Application? <i class="pull-right glyphicon" ng-class="{'glyphicon-minus-sign': quest1, 'glyphicon-plus-sign': !quest1}"></i>
                     </uib-accordion-heading>
-                    <p class="faqans">This is just some content to illustrate fancy headings.</p>
+                    <p class="faqans">This application is a proof of concept, utilizing AngularJS, and featuring several other open source `libraries. Click the "readme.txt" link, on the navbar, for more info.</p>
                 </div>
                 <div class="faqdottedLineDivider"></div>
                 <div uib-accordion-group class="panel-default" is-open="quest2">
                     <uib-accordion-heading class="panel-heading">
-                        I can have markup, too! <i class="pull-right glyphicon" ng-class="{'glyphicon-minus-sign': quest2, 'glyphicon-plus-sign': !quest2}"></i>
+                        What do I do <i class="pull-right glyphicon" ng-class="{'glyphicon-minus-sign': quest2, 'glyphicon-plus-sign': !quest2}"></i>
                     </uib-accordion-heading>
-                    <p class="faqans">This is just some content to illustrate fancy headings.</p>
+                    <p class="faqans">Fill out the form and click the continue button to view the results.</p>
+                </div>
+                <div class="faqdottedLineDivider"></div>
+                <div uib-accordion-group class="panel-default" is-open="quest2">
+                    <uib-accordion-heading class="panel-heading">
+                        Is any data collested of stored? <i class="pull-right glyphicon" ng-class="{'glyphicon-minus-sign': quest2, 'glyphicon-plus-sign': !quest2}"></i>
+                    </uib-accordion-heading>
+                    <p class="faqans">No, no data you submit is stored at the time, as this application is incomplete.</p>
+                </div>
+                <div class="faqdottedLineDivider"></div>
+                <div uib-accordion-group class="panel-default" is-open="quest2">
+                    <uib-accordion-heading class="panel-heading">
+                        What is the idleController? <i class="pull-right glyphicon" ng-class="{'glyphicon-minus-sign': quest2, 'glyphicon-plus-sign': !quest2}"></i>
+                    </uib-accordion-heading>
+                    <p class="faqans">The idle controller will prompt the user to click "Continue" button, otherwise the user will be redirected back the main page and clear any cookies. </p>
                 </div>
             </uib-accordion>
             </div>
             <p class="faqans ng-scope" ng-controller="headerController" id="Close" aria-describedby="Close">
-                <a title="Close" tabindex="0" class="k-link ng-binding" data-ng-click="closeFaqQuest()">Close</a>
+                <a title="Close" tabindex="0" class="k-link" ng-click="closeFaqQuest()">Close</a>
             </p>
     </form>

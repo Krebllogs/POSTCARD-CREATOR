@@ -2,12 +2,8 @@
     'use strict';
     app.controller('postcardController', [
         '$scope', '$location', 'persistenceService', 'documentService', function ($scope, $location, persistenceService, documentService) {
-            $scope.Message="some message to be things to say!"
-
-            $scope.showStepItems = false;
-            $scope.showReviewItems = true;
-            $scope.disableReviewItems = true;
-            $scope.disableReviewItemsNoEdit = true;
+            $scope.Message = "some message to be things to say!"
+            $scope.fileSelected = false;
             $scope.supportDocsUploaded = false;
             $scope.supportDocument = '';
             $scope.upped = false;
@@ -21,28 +17,99 @@
             $scope.uploadInProgress = false;
             $scope.disableSubmit = false;
             $scope.gSequence = 0;
+            $scope.vm = {
+                fn: "",
+                ln: "",
+                message: "",
 
+            }
 
-            $scope.go = function () {
-                $location.path('/finish');
-            };
             //clear cookies
             //persistenceService.clearCookieData();
             $scope.openUploadDoc = function () {
-                $scope.updateDocs.center().open();
+                $scope.UploadDoc.center().open();
             };
             $scope.closeUploadDoc = function () {
-                $scope.updateDocs.close();
+                $scope.UploadDoc.close();
             };
+            $scope.go = function () {
+                //post request to service to log, create and send email.
+                //var request = $http({
+                //    method: "post",
+                //    url: "api/Send",
+                //    params: {
+                //        action: "add"
+                //    },
+                //    data: {
+                //        locationdata: ""//$scope.img.locationData placeholder for location data
+                //        , applicationID: ""//$scope.vm.applicationID
+                //        , moredata: ""//$scope.vm.barCodeID
+                //        , restart: $scope.restart != false ? "true" : "false"
+                //        , resizedImage: $scope.resizedImage
+                //        , originalImage: $scope.img//$scope.base64OriginalImage
+                //        , firstName: $scope.vm.fn
+                //        , lastName: $scope.vm.ln
+                //        , sequence: $scope.gSequence
+                //    }
+                //});
+                //return (request.then(handleSuccess, handleError));
+
+                $location.path('#');
+            };
+
+
+            // start Picture Preview    
+            $scope.imageUpload = function (event) {
+                var files = event.target.files;
+
+                for (var i = 0; i < files.length; i++) {
+                    var file = files[i];
+                    var fileExtension = file.type.toLowerCase();
+                    var fileSize = file.size;
+
+                    if (fileExtension != ".pdf" && fileExtension != ".gif" && fileExtension != ".jpg" && fileExtension != "image/jpeg" && fileExtension != ".jpeg" && fileExtension != ".png") {
+                        //e.preventDefault();
+                        console.log("Invalid file type")
+                        //alertsService.logError('invalid file type');
+                        return;
+                    }
+
+                    if (fileSize > 5242880) {
+                        //e.preventDefault();
+                        console.log("File too large");
+                        //alertsService.logError('file size error));
+                        return;
+                    }
+                    var reader = new FileReader();
+                    reader.onload = $scope.imageIsLoaded;
+                    
+                    reader.readAsDataURL(file);
+                    persistenceService.setCookieDataByType("image64", reader.file);
+                    resizeImage(file, fileExtension.replace('.', ''));
+
+                    $scope.fileSelected = true;
+                }
+            };
+
+            $scope.imageIsLoaded = function (e) {
+                $scope.$apply(function () {
+                    $scope.img = e.target.result;
+                });
+            };
+
+
+
             // Setup the Kendo Upload control
             $scope.postcardUploadOptions = {
                 async: {
-                    saveUrl: "save",//environmentBase + 'api/Document/UploadDocument',
+                    saveUrl: 'save',
                     autoUpload: false,
-                    removeUrl: "remove",//"url",
-                    removeField: "files",
+                    removeUrl: 'url',
+                    removeField: 'files',
                 },
-                multiple: false,
+                multiple: false
+            };
+                            //,
                 //localization: {
                 //    select:                     "Select",
                 //    cancel:                     "Cancel",
@@ -51,8 +118,6 @@
                 //    retry:                      "Retry",
                 //    uploadSelectedFiles:        "Upload File"
                 //}
-            }
-
             // Method used by the Kendo Upload control whenever the user selects a file to upload.
             $scope.selectFiles = function (e) {
 
@@ -65,14 +130,14 @@
                     if (fileExtension != ".pdf" && fileExtension != ".gif" && fileExtension != ".jpg" && fileExtension != ".jpeg" && fileExtension != ".png") {
                         e.preventDefault();
                         console.log("Invalid file type")
-                        //alertsService.logError($translatefilter('AppMsg.ERRINVALIDFILETYPE'));
+                        //alertsService.logError('invalid file type');
                         return;
                     }
 
                     if (fileSize > 5242880) {
                         e.preventDefault();
                         console.log("File too large");
-                        //alertsService.logError($translatefilter('AppMsg.ERRFILESIZE'));
+                        //alertsService.logError('file size error));
                         return;
                     }
 
@@ -158,24 +223,24 @@
                     reader.readAsDataURL(raw);
                 }
             }
-            $scope.uploadFiles = function (e) {
+            $scope.uploadFiles = function () {
                 // Hide Preview Link & the Restart Checkbox
-                $scope.supportDocsUploaded = false;
-                if ($scope.restart || isNaN($scope.gSequence)) {
-                    $scope.gSequence = 1;
-                } else {
-                    $scope.gSequence = $scope.gSequence + 1;
-                }
+                //$scope.supportDocsUploaded = false;
+                //if ($scope.restart || isNaN($scope.gSequence)) {
+                //    $scope.gSequence = 1;
+                //} else {
+                //    $scope.gSequence = $scope.gSequence + 1;
+                //}
                 // Add the other parameters
-                e.data = {
-                    locationdata: $scope.vm.locationData
-                    , applicationID: $scope.vm.applicationID
-                    , moredata: $scope.vm.barCodeID
+                var imageData = {
+                    locationdata: ""//$scope.img.locationData placeholder for location data
+                    , applicationID: ""//$scope.vm.applicationID
+                    , moredata: ""//$scope.vm.barCodeID
                     , restart: $scope.restart != false ? "true" : "false"
                     , resizedImage: $scope.resizedImage
-                    , originalImage: $scope.base64OriginalImage
-                    , firstName: $scope.firstName
-                    , lastName: $scope.lastName
+                    , originalImage: $scope.img//$scope.base64OriginalImage
+                    , firstName: $scope.vm.fn
+                    , lastName: $scope.vm.ln
                     , sequence: $scope.gSequence
                 };
                 if ($scope.restart) {
@@ -184,7 +249,7 @@
                 // Clear the Restart Checkbox
                 $scope.restart = false;
 
-                convertAll(locPage(), 'upload', 'documentation', $scope.vm.barCodeID);
+                ///convertAll(locPage(), 'upload', 'documentation', $scope.vm.barCodeID);
             };
 
             $scope.erasefiles = function () {
@@ -223,29 +288,29 @@
                     console.log("Err");
                     //alertsService.logError(e.files[0].name + ': ' + (angular.fromJson(e.XMLHttpRequest.responseText).message));
             };
+
+            function base64Details() {
+                // Show Spinner
+                $scope.uploadInProgress = true;
+                var base64Details = {
+                    "locationdata": $scope.vm.locationData,
+                    "applicationID": $scope.vm.applicationID,
+                    "moredata": $scope.vm.barCodeID,
+                    "firstName": $scope.customerDetails.firstName,
+                    "lastName": $scope.customerDetails.lastName,
+                    "filename": $scope.base64ImageName,
+                    "filetype": $scope.base64DataType,
+                    "sequence": $scope.gSequence,
+                    "image64": $scope.base64OriginalImage
+                }
+
+                documentService.base64Details(base64Details).then((function (results) {
+                    // Hide Spinner
+                    $scope.uploadInProgress = false;
+                }),
+                    function (response) {
+                        console.log();
+                    });
+            };
         }]);
-
-    function base64Details() {
-        // Show Spinner
-        $scope.uploadInProgress = true;
-        var base64Details = {
-            "locationdata" : $scope.vm.locationData,
-            "applicationID": $scope.vm.applicationID,
-            "moredata" : $scope.vm.barCodeID,
-            "firstName": $scope.customerDetails.firstName,
-            "lastName": $scope.customerDetails.lastName,
-            "filename": $scope.base64ImageName,
-            "filetype": $scope.base64DataType,
-            "sequence": $scope.gSequence,
-            "image64": $scope.base64OriginalImage
-        }
-
-        documentService.base64Details(base64Details).then((function (results) {
-            // Hide Spinner
-            $scope.uploadInProgress = false;
-        }),
-            function (response) {
-                console.log();
-            });
-    };
 }).call(this);
